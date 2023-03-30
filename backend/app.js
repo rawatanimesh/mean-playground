@@ -11,7 +11,9 @@ mongoose.set("strictQuery", false);
 
 mongoose
   .connect(
-    "mongodb+srv://animesh:UTREwyRcaxxG63hH@cluster0.apqycdw.mongodb.net/mean-playground?retryWrites=true&w=majority"
+    "mongodb+srv://animesh:" +
+      process.env.MONGO_ATLAS_PW +
+      "@cluster0.apqycdw.mongodb.net/mean-playground?retryWrites=true&w=majority"
   )
   .then(() => {
     console.log("Conneted to database");
